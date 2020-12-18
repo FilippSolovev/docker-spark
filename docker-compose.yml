@@ -1,0 +1,15 @@
+# Start container with the following command:
+# docker-compose run spark bash
+
+version: '2'
+
+services:
+    spark:
+        image: pslv/spark:3.0
+        volumes:
+            - .:/home
+        stdin_open: true
+        tty: true
+        ports:
+            - "4040:4040"
+            - "10000:10000"

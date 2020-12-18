@@ -1,0 +1,4 @@
+#ignoring the following:
+.DS_Store
+Dockerfile
+docker-compose.yml
