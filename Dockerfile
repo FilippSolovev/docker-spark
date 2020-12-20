@@ -1,7 +1,7 @@
 FROM debian:10.3
 
-LABEL version="3.0"
-LABEL description="Spark 3.0 on top of JDK11 and Scala 2.13.2"
+LABEL version="3.0.1"
+LABEL description="Spark 3.0.1 on top of JDK11 and Scala 2.13.2"
 
 # Initial
 RUN apt-get update && apt-get upgrade -y\
@@ -26,11 +26,11 @@ RUN wget -c https://bintray.com/artifact/download/sbt/debian/sbt-1.3.4.deb \
     && apt-get install sbt \
     && rm sbt-1.3.4.deb
 
-# Install Spark 3.0
-RUN wget -c http://mirror.linux-ia64.org/apache/spark/spark-3.0.0-preview2/spark-3.0.0-preview2-bin-hadoop2.7.tgz \
+# Install Spark 3.0.1
+RUN wget -c https://apache-mirror.rbc.ru/pub/apache/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz \
     && mkdir usr/local/spark \
-    && tar -xvzf spark-3.0.0-preview2-bin-hadoop2.7.tgz -C /usr/local/spark --strip-components=1 \
-    && rm spark-3.0.0-preview2-bin-hadoop2.7.tgz \
+    && tar -xvzf spark-3.0.1-bin-hadoop2.7.tgz -C /usr/local/spark --strip-components=1 \
+    && rm spark-3.0.1-bin-hadoop2.7.tgz \
     && apt-get -y autoremove
 
 ENV PATH=$PATH:/usr/local/spark/bin
