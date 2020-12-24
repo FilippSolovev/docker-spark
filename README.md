@@ -29,3 +29,7 @@ $ docker container run --name spark \
 
 # Author
 [Filipp Solovev](https://github.com/FilippSolovev "Filipp Solovev")
+
+# License
+
+This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
